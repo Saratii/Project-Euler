@@ -10,11 +10,11 @@ mod e4;
 
 fn main() {
     let (value, exec_time) = e1();
-    println!("problem 1 returned {} in {} ms", value, exec_time);
+    println!("problem 1 returned {} in {} ns", value, exec_time);
     let (value, exec_time) = e2();
-    println!("problem 2 returned {} in {} ms", value, exec_time);
+    println!("problem 2 returned {} in {} ns", value, exec_time);
     let (value, exec_time) = e3();
-    println!("problem 3 returned {} in {} ms", value, exec_time);
+    println!("problem 3 returned {} in {} ns", value, exec_time);
     let (value, exec_time) = e4();
-    println!("problem 4 returned {} in {} ms", value, exec_time);
+    println!("problem 4 returned {} in {} ns", value, exec_time);
 }
