@@ -6,11 +6,11 @@ use std::time::Instant;
 pub fn e4() -> (i32, u128) {
     let start_time = Instant::now();
     let mut largest = 0;
-    for i in (110..=990).step_by(11){
-        for j in 100..=999{
+    for i in (110..=990).rev().step_by(11){
+        for j in (100..=999).rev(){
             let num = i * j;
             if num < largest{
-                continue
+                break
             }
             let d1 = num/(100000)%10;
             let d6 = num%10;
