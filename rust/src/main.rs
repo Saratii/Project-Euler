@@ -3,12 +3,14 @@ use crate::e2::e2;
 use crate::e3::e3;
 use crate::e4::e4;
 use crate::e5::e5;
+use crate::e6::e6;
 
 pub mod e1;
 mod e2;
 mod e3;
 mod e4;
 mod e5;
+mod e6;
 
 fn main() {
     let (value, exec_time) = e1();
@@ -21,4 +23,6 @@ fn main() {
     println!("problem 4 returned {} in {} ns", value, exec_time);
     let (value, exec_time) = e5();
     println!("problem 5 returned {} in {} ns", value, exec_time);
+    let (value, exec_time) = e6();
+    println!("problem 6 returned {} in {} ns", value, exec_time);
 }
