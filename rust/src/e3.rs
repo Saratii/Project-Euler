@@ -13,5 +13,5 @@ pub fn e3() -> (i32, u128) {
         }
         i += 2.0;
     }
-    (if target < 2.0 { 2 } else { target as i32 }, (Instant::now() - start_time).as_nanos())
+    (if target < 2.0 { 2 } else { target as i32 }, start_time.elapsed().as_nanos())
 }

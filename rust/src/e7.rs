@@ -13,7 +13,7 @@ pub fn e7() -> (i32, u128){
         }
         i += 2;
     }
-    (i, (Instant::now() - start_time).as_nanos())
+    (i, start_time.elapsed().as_nanos())
 }
 
 fn is_prime(n: i32) -> bool{

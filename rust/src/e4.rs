@@ -30,5 +30,5 @@ pub fn e4() -> (i32, u128) {
             largest = num;
         }
     }
-    (largest, (Instant::now() - start_time).as_nanos())
+    (largest, start_time.elapsed().as_nanos())
 }

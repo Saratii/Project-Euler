@@ -8,5 +8,5 @@ pub fn e1() -> (i32, u128){
             sum += i;
         }
     }
-    (sum, (Instant::now() - start_time).as_nanos())
+    (sum, start_time.elapsed().as_nanos())
 }

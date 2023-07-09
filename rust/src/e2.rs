@@ -12,5 +12,5 @@ pub fn e2() -> (i32, u128){
         a = b;
         b = c;
     }   
-    (sum, (Instant::now() - start_time).as_nanos())
+    (sum, start_time.elapsed().as_nanos())
 }

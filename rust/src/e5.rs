@@ -18,7 +18,7 @@ pub fn e5() -> (i32, u128) {
     for i in 0..PRIMES.len(){
         target *= PRIMES[i as usize].pow(max_num_primes[i as usize] as u32);
     }
-    (target, (Instant::now() - start_time).as_nanos())
+    (target, start_time.elapsed().as_nanos())
 
 }
 fn prime_factorization(mut n: i32) -> [i32; 8]{
