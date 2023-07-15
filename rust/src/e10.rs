@@ -2,25 +2,27 @@ use std::time::Instant;
 
 pub fn e10() -> (i64, u128){
     let start_time = Instant::now();
-    let mut sum: i64 = 2;
-    for i in (3..2_000_000).step_by(2){
-        if is_prime(i){
-            sum += i as i64;
-        }
-    }
-    (sum, start_time.elapsed().as_nanos())
+    let cap = 2_000_000 - 1;
+    
+    let primes = sieve(cap);
+    
+    (primes.iter().sum(), start_time.elapsed().as_nanos())
 }
 
-fn is_prime(n: i32) -> bool{
-    if n == 2{
-        return true
+fn sieve(cap: usize) -> Vec<i64>{
+    let mut prime_sieve: Vec<i64> = vec![0; cap + 1];
+    for i in 0..cap + 1{
+        prime_sieve[i] = i as i64;
     }
-    let mut i = 3;
-    while i * i <= n{
-        if n % i == 0{
-            return false
+    prime_sieve[1] = 0;
+    let mut i = 2;
+    while i*i <= cap{
+        if prime_sieve[i] != 0{
+            for j in (i * i..=cap).step_by(i){
+                prime_sieve[j] = 0;
+            }
         }
-        i += 2;
+        i += 1;
     }
-    return true
+    return prime_sieve;
 }
