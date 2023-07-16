@@ -27,3 +27,11 @@ impl Big {
         self
     }
 }
+
+pub fn combinatorics(total_size: usize, options: usize) -> usize{
+    factorial(total_size) / (factorial(options) * factorial(total_size - options))
+}
+
+pub fn factorial(n: usize) -> usize{
+    (2..=n).product()
+}
