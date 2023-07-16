@@ -1,6 +1,6 @@
 use std::time::Instant;
 
-pub fn e10() -> (i64, u128) {
+pub fn e10() -> (usize, u128) {
     let start_time = Instant::now();
     let cap = 2_000_000 - 1;
 
@@ -9,10 +9,10 @@ pub fn e10() -> (i64, u128) {
     (primes.iter().sum(), start_time.elapsed().as_nanos())
 }
 
-fn sieve(cap: usize) -> Vec<i64> {
-    let mut prime_sieve: Vec<i64> = vec![0; cap + 1];
+fn sieve(cap: usize) -> Vec<usize> {
+    let mut prime_sieve = vec![0; cap + 1];
     for i in 0..cap + 1 {
-        prime_sieve[i] = i as i64;
+        prime_sieve[i] = i;
     }
     prime_sieve[1] = 0;
     let mut i = 2;
